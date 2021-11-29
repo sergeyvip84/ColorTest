@@ -193,9 +193,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="beginScreen" translatesAutoresizingMaskIntoConstraints="NO" id="6CF-Xi-w75">
-                                <rect key="frame" x="-236" y="0.0" width="650" height="896"/>
-                            </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" spacing="54" translatesAutoresizingMaskIntoConstraints="NO" id="D81-Jd-PNh">
                                 <rect key="frame" x="138" y="364" width="139" height="168"/>
                                 <subviews>
@@ -229,6 +226,9 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="beginScreen" translatesAutoresizingMaskIntoConstraints="NO" id="6CF-Xi-w75">
+                                <rect key="frame" x="-118" y="0.0" width="650" height="896"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="gtb-0r-moD"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -236,7 +236,7 @@
                             <constraint firstItem="6CF-Xi-w75" firstAttribute="top" secondItem="ohS-uX-sVA" secondAttribute="bottom" constant="-421" id="9AS-JX-JS1"/>
                             <constraint firstAttribute="bottom" secondItem="6CF-Xi-w75" secondAttribute="bottom" id="Wfr-Cg-Dxe"/>
                             <constraint firstItem="6CF-Xi-w75" firstAttribute="top" secondItem="yRf-cA-Zhi" secondAttribute="top" id="dwC-PH-RQw"/>
-                            <constraint firstItem="6CF-Xi-w75" firstAttribute="trailing" secondItem="gtb-0r-moD" secondAttribute="trailing" id="fPS-h5-N54"/>
+                            <constraint firstItem="6CF-Xi-w75" firstAttribute="trailing" secondItem="gtb-0r-moD" secondAttribute="trailing" constant="118" id="fPS-h5-N54"/>
                         </constraints>
                     </view>
                 </viewController>
