@@ -35,8 +35,11 @@ class CoincidenceTableView: UITableViewController {
         default: break
         }
         
-        
         return cell
+    }
+     
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 45
     }
 
    
