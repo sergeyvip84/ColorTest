@@ -19,12 +19,20 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="zastavka" translatesAutoresizingMaskIntoConstraints="NO" id="CEx-Ob-9rO">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ColorTest" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ucb-zB-cw9">
+                                <rect key="frame" x="121" y="426" width="172" height="44.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="37"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="CEx-Ob-9rO" secondAttribute="bottom" id="4FM-Z1-AhE"/>
+                            <constraint firstItem="Ucb-zB-cw9" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="DhP-VW-JCW"/>
                             <constraint firstItem="CEx-Ob-9rO" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="KhX-cJ-g3w"/>
+                            <constraint firstItem="Ucb-zB-cw9" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Up9-Wn-q17"/>
                             <constraint firstItem="CEx-Ob-9rO" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="bNR-JY-Mgf"/>
                             <constraint firstItem="CEx-Ob-9rO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="iMc-vh-cOv"/>
                         </constraints>

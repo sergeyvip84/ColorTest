@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		43055E092753593A000BC30E /* CoincidenceTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43055E082753593A000BC30E /* CoincidenceTableView.swift */; };
+		43055E0C27555C28000BC30E /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43055E0B27555C28000BC30E /* CustomTableViewCell.swift */; };
+		431D18322757B0D500850E8B /* FirstScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431D18312757B0D500850E8B /* FirstScreen.swift */; };
 		43CF6C9A274CDD4E004B14F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CF6C99274CDD4E004B14F1 /* AppDelegate.swift */; };
 		43CF6C9C274CDD4E004B14F1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CF6C9B274CDD4E004B14F1 /* SceneDelegate.swift */; };
 		43CF6C9E274CDD4E004B14F1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CF6C9D274CDD4E004B14F1 /* ViewController.swift */; };
@@ -19,6 +21,8 @@
 
 /* Begin PBXFileReference section */
 		43055E082753593A000BC30E /* CoincidenceTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoincidenceTableView.swift; sourceTree = "<group>"; };
+		43055E0B27555C28000BC30E /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		431D18312757B0D500850E8B /* FirstScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstScreen.swift; sourceTree = "<group>"; };
 		43CF6C96274CDD4E004B14F1 /* ColorTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ColorTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		43CF6C99274CDD4E004B14F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		43CF6C9B274CDD4E004B14F1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,7 +67,9 @@
 				43CF6C99274CDD4E004B14F1 /* AppDelegate.swift */,
 				43CF6C9B274CDD4E004B14F1 /* SceneDelegate.swift */,
 				43CF6C9D274CDD4E004B14F1 /* ViewController.swift */,
+				43055E0B27555C28000BC30E /* CustomTableViewCell.swift */,
 				43055E082753593A000BC30E /* CoincidenceTableView.swift */,
+				431D18312757B0D500850E8B /* FirstScreen.swift */,
 				43CF6C9F274CDD4E004B14F1 /* Main.storyboard */,
 				43CF6CA5274CDD50004B14F1 /* Assets.xcassets */,
 				43CF6CA7274CDD50004B14F1 /* LaunchScreen.storyboard */,
@@ -143,9 +149,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43055E0C27555C28000BC30E /* CustomTableViewCell.swift in Sources */,
 				43055E092753593A000BC30E /* CoincidenceTableView.swift in Sources */,
 				43CF6C9E274CDD4E004B14F1 /* ViewController.swift in Sources */,
 				43CF6CA4274CDD4E004B14F1 /* ColorTest.xcdatamodeld in Sources */,
+				431D18322757B0D500850E8B /* FirstScreen.swift in Sources */,
 				43CF6C9A274CDD4E004B14F1 /* AppDelegate.swift in Sources */,
 				43CF6C9C274CDD4E004B14F1 /* SceneDelegate.swift in Sources */,
 			);

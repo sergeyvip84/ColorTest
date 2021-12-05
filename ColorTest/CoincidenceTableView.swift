@@ -6,49 +6,58 @@
 //
 
 import UIKit
+import CoreData
 
 class CoincidenceTableView: UITableViewController {
-
-    var arrayCoincidence = [97,96,99,94,95,83,93,55,46,98]
+    
+    var fetchResultsController: NSFetchedResultsController <Coincidence>!
+    var concidence : [Coincidence] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-    
+        let fetchRequest : NSFetchRequest<Coincidence> = Coincidence.fetchRequest()
+        let sortDescriptor = NSSortDescriptor (key: "coincidenceLevel", ascending: true)
+        fetchRequest.sortDescriptors = [sortDescriptor]
+        if let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
+            fetchResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
+            
+            do {
+                try fetchResultsController.performFetch()
+                concidence = fetchResultsController.fetchedObjects!
+            } catch let error as NSError {
+                print(error.localizedDescription)
+            }
+        }
+        
     }
 
     // MARK: - Table view data source
 
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return arrayCoincidence.count
+        return concidence.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        cell.textLabel?.text = String(arrayCoincidence[indexPath.row])
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CustomTableViewCell
         
-        switch arrayCoincidence[indexPath.row] {
-        case 97...100: cell.imageView?.image = UIImage(named: "stars3")
-        case 94..<97: cell.imageView?.image = UIImage(named: "stars2")
-        case 90..<94: cell.imageView?.image = UIImage(named: "star1")
-        default: break
+        cell.labelCoincidence?.text = String(concidence[indexPath.row].coincidenceLevel)
+        cell.labelDate.text = concidence[indexPath.row].date
+        
+        if concidence[indexPath.row].level {
+            cell.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+        } else {
+            cell.backgroundColor = .none
+        }
+        
+        switch concidence[indexPath.row].coincidenceLevel {
+        case 97...100: cell.imageStars?.image = UIImage(named: "stars3")
+        case 94..<97: cell.imageStars?.image = UIImage(named: "stars2")
+        case 90..<94: cell.imageStars?.image = UIImage(named: "star1")
+        default: cell.imageStars?.image = UIImage(named: "badsmile")
         }
         
         return cell
-    }
-     
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 45
-    }
-
-   
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-   // override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-//    }
-
+    }   
 }
