@@ -17,7 +17,7 @@ class CoincidenceTableView: UITableViewController {
         super.viewDidLoad()
 
         let fetchRequest : NSFetchRequest<Coincidence> = Coincidence.fetchRequest()
-        let sortDescriptor = NSSortDescriptor (key: "coincidenceLevel", ascending: true)
+        let sortDescriptor = NSSortDescriptor (key: "coincidenceLevel", ascending: false)
         fetchRequest.sortDescriptors = [sortDescriptor]
         if let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
             fetchResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
@@ -29,7 +29,6 @@ class CoincidenceTableView: UITableViewController {
                 print(error.localizedDescription)
             }
         }
-        
     }
 
     // MARK: - Table view data source
@@ -57,7 +56,6 @@ class CoincidenceTableView: UITableViewController {
         case 90..<94: cell.imageStars?.image = UIImage(named: "star1")
         default: cell.imageStars?.image = UIImage(named: "badsmile")
         }
-        
         return cell
     }   
 }
