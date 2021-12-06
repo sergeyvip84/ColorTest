@@ -45,7 +45,7 @@ class CoincidenceTableView: UITableViewController {
         cell.labelDate.text = concidence[indexPath.row].date
         
         if concidence[indexPath.row].level {
-            cell.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+            cell.backgroundColor = #colorLiteral(red: 0.5843137503, green: 0.8235294223, blue: 0.4196078479, alpha: 1)
         } else {
             cell.backgroundColor = .none
         }
