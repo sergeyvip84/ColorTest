@@ -15,7 +15,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var randomScreen: UIView!
     @IBOutlet weak var mainScreen: UIView!
     @IBOutlet weak var labelPercentOfWin: UILabel?
-    @IBOutlet weak var butttonCoincidence: UIBarButtonItem!
 
     var level = true
     var colorR : CGFloat = 0.5
