@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var randomScreen: UIView!
     @IBOutlet weak var mainScreen: UIView!
     @IBOutlet weak var labelPercentOfWin: UILabel?
-
+    
     var level = true
     var colorR : CGFloat = 0.5
     var colorG : CGFloat = 0.5
@@ -24,6 +24,13 @@ class ViewController: UIViewController {
     var randomRed : CGFloat = 0.5
     var randomGreen : CGFloat = 0.5
     var randomBlue : CGFloat = 0.5
+    
+    lazy var dateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .short
+        formatter.timeStyle = .short
+        return formatter
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,7 +54,7 @@ class ViewController: UIViewController {
                                                green: randomGreen,
                                                blue: randomBlue,
                                                alpha: 1.0)
-
+        
     }
     
     func clearMainScreen () {
@@ -70,10 +77,10 @@ class ViewController: UIViewController {
     }
     
     @IBAction func buttomTake(_ sender: UIButton) {
-       
+        
         let percentOfWin = abs (colorR - randomRed) + abs (colorG - randomGreen) + abs (colorB - randomBlue)
         let percent = Int16(100 - (percentOfWin * 33.33333333333333))
-                
+        
         switch percent {
         case 97...100: labelPercentOfWin?.text = "Perfect! Coincidence \(percent)%"
         case 94..<97: labelPercentOfWin?.text = "Good! Coincidence \(percent)%"
@@ -87,7 +94,7 @@ class ViewController: UIViewController {
         if let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
             let coincidence = Coincidence(context: context)
             coincidence.coincidenceLevel = percent
-            coincidence.date = String(today.dropLast(5))
+            coincidence.date = dateFormatter.string(from: Date())
             coincidence.level = level
             
             do {
@@ -104,7 +111,7 @@ class ViewController: UIViewController {
         randomScreen.isHidden = false
         
     }
-   
+    
     @IBAction func sliderActionR(_ sender: UISlider) {
         colorR = CGFloat(sender.value)
         viewMainScreen()
