@@ -8,6 +8,17 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    
+    var gradientLayer : CAGradientLayer! {
+        didSet {
+            gradientLayer.startPoint = CGPoint(x: 0, y: 0)
+            gradientLayer.endPoint = CGPoint(x: 1, y: 1)
+            gradientLayer.colors = [UIColor.red.cgColor, UIColor.systemGray2.cgColor, UIColor.systemGray6.cgColor]
+            
+        }
+    }
+    
     @IBOutlet weak var sliderR: UISlider! {
         didSet {
             shadowObject(slider: sliderR)
@@ -24,8 +35,16 @@ class ViewController: UIViewController {
         }
     }
     @IBOutlet weak var labelRGB: UILabel!
-    @IBOutlet weak var randomScreen: UIView!
-    @IBOutlet weak var mainScreen: UIView!
+    @IBOutlet weak var randomScreen: UIView! {
+        didSet {
+            borderObject(object: randomScreen)
+        }
+    }
+    @IBOutlet weak var mainScreen: UIView! {
+        didSet {
+            borderObject(object: mainScreen)
+        }
+    }
     @IBOutlet weak var labelPercentOfWin: UILabel?
     @IBOutlet weak var buttonTakeOutlet: UIButton! {
         didSet {
@@ -54,12 +73,15 @@ class ViewController: UIViewController {
         return formatter
     }()
     
+    override func viewDidLayoutSubviews() {
+        gradientLayer.frame = CGRect(x: 0, y: 0, width: self.view.bounds.width, height: self.view.bounds.height)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        randomScreen.layer.cornerRadius = 25
-        mainScreen.layer.cornerRadius = 25
+        gradientLayer = CAGradientLayer()
+        view.layer.insertSublayer(gradientLayer, at: 0)
         
         doitRandomScreen()
         viewMainScreen()
@@ -88,6 +110,14 @@ class ViewController: UIViewController {
         sliderG.value = 0.5
         sliderB.value = 0.5
     }
+    
+    func borderObject (object: UIView) {
+        object.layer.borderColor = UIColor.gray.cgColor
+        object.layer.borderWidth = 5
+        object.layer.cornerRadius = 25
+        object.layer.cornerRadius = 25
+    }
+    
     
     func shadowObject (slider: UISlider) {
         slider.layer.shadowOffset = CGSize(width: 0, height: 10)
