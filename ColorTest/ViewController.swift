@@ -8,13 +8,35 @@
 import UIKit
 
 class ViewController: UIViewController {
-    @IBOutlet weak var sliderR: UISlider!
-    @IBOutlet weak var sliderG: UISlider!
-    @IBOutlet weak var sliderB: UISlider!
+    @IBOutlet weak var sliderR: UISlider! {
+        didSet {
+            shadowObject(slider: sliderR)
+        }
+    }
+    @IBOutlet weak var sliderG: UISlider! {
+        didSet {
+            shadowObject(slider: sliderG)
+        }
+    }
+    @IBOutlet weak var sliderB: UISlider! {
+        didSet {
+            shadowObject(slider: sliderB)
+        }
+    }
     @IBOutlet weak var labelRGB: UILabel!
     @IBOutlet weak var randomScreen: UIView!
     @IBOutlet weak var mainScreen: UIView!
     @IBOutlet weak var labelPercentOfWin: UILabel?
+    @IBOutlet weak var buttonTakeOutlet: UIButton! {
+        didSet {
+            buttonTakeOutlet.layer.cornerRadius = 10
+            buttonTakeOutlet.layer.borderColor = UIColor.white.cgColor
+            buttonTakeOutlet.layer.borderWidth = 4
+            buttonTakeOutlet.layer.shadowOffset = CGSize(width: 0, height: 5)
+            buttonTakeOutlet.layer.shadowOpacity = 0.8
+            buttonTakeOutlet.layer.shadowRadius = 10
+        }
+    }
     
     var level = true
     var colorR : CGFloat = 0.5
@@ -35,8 +57,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        randomScreen.layer.cornerRadius = 15
-        mainScreen.layer.cornerRadius = 15
+        
+        randomScreen.layer.cornerRadius = 25
+        mainScreen.layer.cornerRadius = 25
         
         doitRandomScreen()
         viewMainScreen()
@@ -66,6 +89,12 @@ class ViewController: UIViewController {
         sliderB.value = 0.5
     }
     
+    func shadowObject (slider: UISlider) {
+        slider.layer.shadowOffset = CGSize(width: 0, height: 10)
+        slider.layer.shadowOpacity = 1
+        slider.layer.shadowRadius = 5
+    }
+    
     func viewMainScreen () {
         mainScreen.backgroundColor = UIColor(red: colorR, green: colorG, blue: colorB, alpha: 1)
         labelRGB.text = "Red:\(Int(colorR * 100)) Green:\(Int(colorG * 100)) Blue:\(Int(colorB * 100))"
@@ -77,6 +106,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func buttomTake(_ sender: UIButton) {
+        
         
         let percentOfWin = abs (colorR - randomRed) + abs (colorG - randomGreen) + abs (colorB - randomBlue)
         let percent = Int16(100 - (percentOfWin * 33.33333333333333))

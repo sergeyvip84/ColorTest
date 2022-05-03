@@ -47,6 +47,7 @@
                                 <rect key="frame" x="13" y="644" width="388" height="31"/>
                                 <color key="minimumTrackTintColor" systemColor="opaqueSeparatorColor"/>
                                 <color key="maximumTrackTintColor" systemColor="systemRedColor"/>
+                                <color key="thumbTintColor" red="1" green="0.49757229598524988" blue="0.42008328848737087" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <action selector="sliderActionR:" destination="BYZ-38-t0r" eventType="valueChanged" id="Hii-U3-4Z0"/>
                                 </connections>
@@ -55,15 +56,16 @@
                                 <rect key="frame" x="13" y="694" width="388" height="31"/>
                                 <color key="minimumTrackTintColor" systemColor="opaqueSeparatorColor"/>
                                 <color key="maximumTrackTintColor" systemColor="systemGreenColor"/>
+                                <color key="thumbTintColor" red="0.48177284889999999" green="0.78039215689999997" blue="0.4811361026" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <action selector="sliderActionG:" destination="BYZ-38-t0r" eventType="valueChanged" id="sxP-MY-zB1"/>
                                 </connections>
                             </slider>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v7a-MI-VoR">
-                                <rect key="frame" x="180.66666666666666" y="819" width="53" height="33"/>
-                                <color key="backgroundColor" systemColor="systemRedColor"/>
+                                <rect key="frame" x="169.66666666666666" y="819" width="75" height="33"/>
+                                <color key="backgroundColor" red="1" green="0.49757229600000003" blue="0.42008328849999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <state key="normal" title="  Take  ">
+                                <state key="normal" title="    Take     ">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="titleShadowColor" systemColor="linkColor"/>
                                 </state>
@@ -75,6 +77,7 @@
                                 <rect key="frame" x="13" y="746" width="388" height="31"/>
                                 <color key="minimumTrackTintColor" systemColor="opaqueSeparatorColor"/>
                                 <color key="maximumTrackTintColor" systemColor="systemBlueColor"/>
+                                <color key="thumbTintColor" red="0.33938736905131339" green="0.64379281691635382" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <action selector="sliderActionB:" destination="BYZ-38-t0r" eventType="valueChanged" id="iEW-4F-yfd"/>
                                 </connections>
@@ -115,6 +118,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="buttonTakeOutlet" destination="v7a-MI-VoR" id="iPG-dc-9QR"/>
                         <outlet property="labelPercentOfWin" destination="Qka-R9-sQ2" id="42a-KT-hS2"/>
                         <outlet property="labelRGB" destination="gck-bT-cbU" id="Y2b-oM-gEK"/>
                         <outlet property="mainScreen" destination="nBO-bb-NiG" id="cXB-Gq-lhW"/>
@@ -274,7 +278,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="RnJ-Mf-OuT" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" alpha="0.5" contentMode="scaleToFill" id="5Ip-i1-cTp">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="5Ip-i1-cTp">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

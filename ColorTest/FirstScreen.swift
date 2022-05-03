@@ -14,8 +14,8 @@ class FirstScreen: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        beginnerButton.layer.cornerRadius = 15
-        profecionalButton.layer.cornerRadius = 15
+        beginnerButton.layer.cornerRadius = 25
+        profecionalButton.layer.cornerRadius = 25
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
